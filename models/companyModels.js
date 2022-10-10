@@ -12,7 +12,7 @@ const getAllDataCompany = () => {
   });
 };
 
-const getMisionCompany = () => {
+const getMissionCompany = () => {
   return new Promise((resolve, reject) => {
     db.query(`SELECT * FROM mission_company`, (error, result) => {
       if (error) {
@@ -62,7 +62,7 @@ const getTeamCompany = () => {
 
 module.exports = {
   getAllDataCompany,
-  getMisionCompany,
+  getMissionCompany,
   getServiceCompany,
   getTestimonialCompany,
   getTeamCompany,
