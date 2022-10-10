@@ -15,7 +15,7 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.use(express.static("images"));
+app.use(express.static("images"));
 
 app.use(cors());
 const allowlist = ["https://localhost:3000"];
@@ -30,6 +30,10 @@ const corsOptionsDelegate = function (req, callback) {
 };
 
 app.use("/api", cors(corsOptionsDelegate), router);
+
+app.use("*", (req, res) => {
+  res.send("Sukses");
+});
 
 app.listen(port, function (err) {
   if (err) throw err;
