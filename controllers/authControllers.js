@@ -17,11 +17,9 @@ const register = async (req, res) => {
       res.status(401).send("Duplicate email");
     } else {
       await model.addUser({
-        username: username.trim(),
+        name: name.trim(),
         email: email.toLowerCase().trim(),
         password: hash,
-        phone: phone.trim(),
-        image,
       });
       res.status(200).send({ message: "Register user success!" });
     }
